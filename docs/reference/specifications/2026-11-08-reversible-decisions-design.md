@@ -2,7 +2,7 @@
 
 ## Status
 
-This document records the approved design. Implementation is in progress.
+This document records the approved design and completed implementation.
 
 ## Problem
 
@@ -92,6 +92,16 @@ The structural test must check the skill metadata and the repo policy. Use STE l
 - Do not change global Pi instructions.
 - Do not apply this repo's `AGENTS.md` policy to other repositories.
 - Do not ask the user to choose between low-risk local edits.
+
+## Implementation results
+
+The no-skill baseline asked for a preference in the easy case. It suggested a destructive migration after a backup check. It also asked for redundant approval on a complete direct request.
+
+With the skill, the agent chose the local option and recorded a ruling. It asked for numbered choices before the unresolved migration. It accepted the direct request without a second approval. It asked for numbered information options about the unclear billing setting and changed nothing.
+
+JEV selected the hybrid test approach with confidence `1`. The fallback scenario used the same decision criteria without JEV.
+
+The structural test passed. STE flavored lint returned `ste: clean.` The Vercel Skills CLI installed only `reversible-decisions` in a temporary Pi project. Git ignored `plans/`, the local PDF, and harness artifacts. The PDF is not tracked.
 
 ## Acceptance criteria
 
