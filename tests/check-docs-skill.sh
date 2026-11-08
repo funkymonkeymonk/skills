@@ -27,9 +27,9 @@ if (( ${#missing[@]} > 0 )); then
   exit 1
 fi
 
-grep -Fq 'plans/' .gitignore
-grep -Fq '.pi-subagents/' .gitignore
-grep -Fq 'ASD-STE100_ISSUE9.pdf' .gitignore
+grep -Fxq '/plans/' .gitignore
+grep -Fxq '/.pi-subagents/' .gitignore
+grep -Fxq '/ASD-STE100_ISSUE9.pdf' .gitignore
 grep -Fq 'docs/reference/specifications/' AGENTS.md
 grep -Fq 'docs/explanation/decisions/' AGENTS.md
 grep -Fq 'Use STE unless the user explicitly requests another style.' skills/diataxis-docs/SKILL.md

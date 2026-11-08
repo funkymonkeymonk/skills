@@ -82,6 +82,9 @@ Validation passed:
 - STE flavored lint returned `ste: clean.`
 - The Vercel Skills CLI installed only `diataxis-docs` in a temporary Pi project.
 - Git reports `plans/`, the local Issue 9 PDF, and `.pi-subagents/` as ignored.
+- The no-skill baseline combined four reader needs in one document. It also invented installation instructions, a `--help` option, and design rationale. The flavored linter found two issues: a nominalization and passive voice.
+- The pressure test identified all four needs and asked before splitting the requested document. It listed the known facts, asked for missing details, and invented no behavior.
+- The explicit opt-out test used a casual tone and asked for the missing product details.
 
 ## Acceptance criteria
 
