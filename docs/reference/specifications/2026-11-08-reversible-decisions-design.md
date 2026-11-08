@@ -99,9 +99,9 @@ The no-skill baseline asked for a preference in the easy case. It suggested a de
 
 With the skill, the agent chose the local option and recorded a ruling. It asked for numbered choices before the unresolved migration. It accepted the direct request without a second approval. It asked for numbered information options about the unclear billing setting and changed nothing.
 
-JEV selected the hybrid test approach with confidence `1`. The fallback scenario used the same decision criteria without JEV.
+JEV selected the hybrid test approach with confidence `1`. When JEV was unavailable, the fallback rubric selected only fresh-context prompt tests. The two outputs differed.
 
-The structural test passed. STE flavored lint returned `ste: clean.` The Vercel Skills CLI installed only `reversible-decisions` in a temporary Pi project. Git ignored `plans/`, the local PDF, and harness artifacts. The PDF is not tracked.
+The tests did not publish an external release or run a production migration. The structural test passed. STE flavored lint returned `ste: clean.` The Vercel Skills CLI installed only `reversible-decisions` in a temporary Pi project. Git ignored `plans/`, the local PDF, and harness artifacts. The PDF is not tracked.
 
 ## Acceptance criteria
 
