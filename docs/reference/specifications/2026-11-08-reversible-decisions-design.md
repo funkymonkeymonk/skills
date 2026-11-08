@@ -2,7 +2,7 @@
 
 ## Status
 
-This document records the proposed design for review before implementation.
+This document records the approved design. Implementation is in progress.
 
 ## Problem
 
