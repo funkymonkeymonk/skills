@@ -12,6 +12,8 @@ Replace `<owner>/<repo>` with this repository's GitHub owner and name. Replace `
 
 The `--global` option installs the skill for Pi across projects. Vercel's standard Pi target is `~/.agents/skills/`.
 
+To expose a skill through another project's devenv environment, see [Add a repository skill to a devenv environment](docs/how-to/add-a-skill-to-devenv.md).
+
 To add a skill, create a separate directory under `skills/`. Give the directory and the skill the same name. Add a `SKILL.md` file with valid Agent Skills frontmatter. Then install the skill by name with the CLI.
 
 The root `AGENTS.md` applies documentation rules to work in this repository. It does not change your global Pi instructions or other repositories.
