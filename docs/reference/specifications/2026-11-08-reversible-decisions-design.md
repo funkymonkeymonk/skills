@@ -68,7 +68,7 @@ For an unresolved hard or unclear choice, the agent must stop before it changes 
 
 Create `skills/reversible-decisions/SKILL.md` with valid Agent Skills metadata. Its description must state when to use the skill. It must cover decision points across workflows, not only subagent-driven development.
 
-Keep the skill concise. Use it for the detailed classification rubric, `jev_evaluate` guidance, ruling format, and numbered questions. Do not modify or copy upstream Superpowers skills.
+Keep the skill concise. Use it for the detailed classification rubric, `jev_evaluate` guidance, ruling format, and numbered questions. Do not modify upstream Superpowers files. Use the separate vendoring policy for requested copies. See [Selective Superpowers Skill Vendoring](2026-11-08-superpowers-skill-vendoring-design.md).
 
 ### Tests
 
@@ -89,6 +89,7 @@ The structural test must check the skill metadata and the repo policy. Use STE l
 ## Out of scope
 
 - Do not modify upstream Superpowers skills.
+- Use the separate vendoring policy for requested copies of selected upstream skills.
 - Do not change global Pi instructions.
 - Do not apply this repo's `AGENTS.md` policy to other repositories.
 - Do not ask the user to choose between low-risk local edits.

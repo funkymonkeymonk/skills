@@ -1,0 +1,34 @@
+name: Update upstream skills
+
+on:
+  schedule:
+    - cron: "17 9 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-upstreams
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Check upstream pins and open review pull requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BASE_BRANCH: ${{ github.event.repository.default_branch }}
+          REPOSITORY_SLUG: ${{ github.repository }}
+        run: >-
+          python3 scripts/vendor_skills.py update
+          --manifest upstreams.json
+          --repo .
+          --base "$BASE_BRANCH"
+          --repo-slug "$REPOSITORY_SLUG"

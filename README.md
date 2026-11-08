@@ -17,3 +17,9 @@ To expose a skill through another project's devenv environment, see [Add a repos
 To add a skill, create a separate directory under `skills/`. Give the directory and the skill the same name. Add a `SKILL.md` file with valid Agent Skills frontmatter. Then install the skill by name with the CLI.
 
 The root `AGENTS.md` applies documentation rules to work in this repository. It does not change your global Pi instructions or other repositories.
+
+## Selected Superpowers skills
+
+The `upstreams.json` file lists the Superpowers skills that this repository vendors. Each entry pins one skill to an exact Git commit. The list starts empty, so the repository does not import skills that you have not selected.
+
+See [Vendor a Superpowers skill](docs/how-to/vendor-a-superpowers-skill.md) to add a skill, synchronize its pinned files, and install it with the Skills CLI. Use `python3 scripts/vendor_skills.py update` with the arguments in the guide to check upstream changes locally. GitHub also checks selected skills weekly and on manual request. It opens one review pull request per changed skill. It does not merge pull requests.

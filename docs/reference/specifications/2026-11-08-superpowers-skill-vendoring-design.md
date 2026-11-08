@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft for review.
+Implementation is in progress. This document records the accepted design.
 
 ## Problem
 
@@ -23,9 +23,9 @@ This repository must offer selected skills from `obra/superpowers` without impor
 
 ### Source manifest and vendored files
 
-Store the upstream selection and pins in a JSON manifest. Each entry identifies the upstream repository, skill name, source path, exact commit SHA, and destination path.
+Store the upstream selection and pins in `upstreams.json`. Each entry identifies the upstream repository, skill name, source path, license path, and exact commit SHA.
 
-Store vendored skills under `skills/<name>/`. The manifest is an allowlist. The sync task must not add skills that are absent from the manifest.
+Store vendored skills under `skills/<name>/`. Store each matching license at `licenses/upstream/<name>-LICENSE`. The destination paths derive from the skill name. The manifest is an allowlist. The sync task must not add skills that are absent from the manifest.
 
 Start with an empty upstream selection because the user has not named any skills. This prevents an unrequested skill from entering the repository. Add a skill only when the user adds its manifest entry.
 
@@ -33,9 +33,9 @@ Keep the upstream MIT license and attribution with the vendored content. Do not 
 
 ### Synchronization and version checks
 
-Add a local command that reads the manifest and synchronizes only its entries. It must use each entry's exact commit SHA. It must reject invalid paths, duplicate skill names, source directories that do not exist, and unsafe filesystem entries. It must not execute upstream files.
+Use `scripts/vendor_skills.py sync` to read the manifest and synchronize its entries. Use each entry's exact commit SHA. Reject invalid paths, duplicate skill names, missing source directories, and symbolic links. Do not execute upstream files.
 
-Check for the newest upstream commit that affects each selected skill path. If a path changed after its pin, prepare an update with the new content and exact commit SHA. Do not change the default branch during this check.
+Use `scripts/vendor_skills.py update` to check the newest upstream commit that affects each selected skill path or license file. If either path changed after its pin, prepare an update with the new content and exact commit SHA. Do not change the default branch during the check.
 
 Create one pull request per changed skill. Include the old and new commit SHAs and the upstream skill path in each pull request. Do not merge pull requests automatically. Merge a pull request to apply an update. Close it to reject the current update.
 
@@ -43,7 +43,7 @@ Do not create another pull request for a skill while its update pull request rem
 
 ### GitHub automation and installation
 
-Run the update check weekly and through a manual workflow trigger. Give the workflow only the permissions needed to read repository contents, write update branches, and create pull requests.
+Run the update check every Monday at 09:17 UTC and through a manual workflow trigger. Give the workflow only `contents: write` and `pull-requests: write` permissions.
 
 Keep the workflow limited to manifest entries. Treat upstream content as data and do not run scripts from upstream skills.
 
@@ -63,7 +63,7 @@ A failure for one skill must not discard valid updates for other skills. Report 
 
 ### Tests
 
-Use local fixture Git repositories to test manifest validation, exact-commit synchronization, upstream change detection, per-skill update proposals, idempotency, and path safety. Tests must not require network access or GitHub credentials.
+Use local fixture Git repositories to test manifest validation, exact-commit synchronization, skill and license change detection, per-skill update proposals, idempotency, and path safety. Tests must not require network access or GitHub credentials.
 
 Check the GitHub workflow permissions and triggers with automated structural tests. After repository creation, test installation from the private repository with the Skills CLI and the user's authenticated `gh` setup.
 
@@ -96,10 +96,11 @@ Rejected alternatives:
 
 ## Acceptance criteria
 
-- The manifest pins each selected skill to an exact commit SHA.
+- `upstreams.json` pins each selected skill to an exact commit SHA and records its license path.
 - Synchronization copies only allowlisted skill paths and does not modify upstream content.
 - The weekly and manual update workflow creates separate, review-only pull requests for changed skills.
 - The update process does not create duplicate pull requests for a skill and revision, and it does not reopen a rejected revision.
+- The updater continues with other skills when one skill fails.
 - Tests cover manifest validation, pinning, change detection, PR proposal behavior, and path safety without network access.
 - The Vercel Skills CLI can install a selected skill from the private repository.
 - The repository preserves the upstream license and attribution.

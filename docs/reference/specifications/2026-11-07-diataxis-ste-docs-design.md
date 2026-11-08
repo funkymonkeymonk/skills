@@ -94,4 +94,4 @@ Validation passed:
 - Git ignores `plans/` and the local ASD-STE100 PDF.
 - The skill applies Diataxis structure and STE language by default.
 - Each plan includes documentation updates. Agents delete the plan after they complete the work.
-- Do not copy, fork, or modify upstream Superpowers files.
+- This documentation design does not modify upstream Superpowers files. The separate vendoring policy allows explicit, unmodified skill copies in this repository. See [Selective Superpowers Skill Vendoring](2026-11-08-superpowers-skill-vendoring-design.md).
