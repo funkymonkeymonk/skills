@@ -28,6 +28,7 @@ if (( ${#missing[@]} > 0 )); then
 fi
 
 grep -Fq 'plans/' .gitignore
+grep -Fq '.pi-subagents/' .gitignore
 grep -Fq 'ASD-STE100_ISSUE9.pdf' .gitignore
 grep -Fq 'docs/reference/specifications/' AGENTS.md
 grep -Fq 'docs/explanation/decisions/' AGENTS.md
