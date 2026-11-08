@@ -13,7 +13,7 @@ Identify the user's goal, known facts, and the available options. Do not invent 
 
 A clear direct request counts as user input when it names the action and supplies the required facts. Do not ask for redundant approval. Follow higher-priority safety and authorization rules.
 
-If critical facts are absent, gather safe evidence. If the facts remain unknown, ask the user.
+If critical facts are absent, gather safe evidence. If a hard or unclear choice still lacks critical facts, ask the user with up to three numbered options. Offer options to send source evidence, authorize a safe read-only check, or defer the change. Do not ask an open-ended question for these choices.
 
 ## Assess reversal cost
 

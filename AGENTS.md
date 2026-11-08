@@ -11,6 +11,7 @@ Apply this rule across workflows, regardless of the active skill. Before you ask
 - Give no more than three numbered options. State the main consequence and reversal cost for each option. Recommend an option only when evidence supports it.
 - Treat a clear direct user request as the user's input when it names the action and required facts. Do not ask for redundant approval.
 - Gather safe evidence when the agent lacks critical facts. Do not invent facts or bypass security, privacy, legal, or data-safety requirements.
+- When you ask for missing facts about a hard or unclear choice, use up to three numbered options. The options can request source evidence, authorize a safe read-only check, or defer the change.
 - Use `jev_evaluate` for meaningful choices when the tool is available. Use the same decision criteria when it is not available.
 - For autonomous choices, record `Ruling: <what> — <why> — Impact if wrong: <cost>`. List up to three rejected alternatives with brief reasons. Do not label the decision “easy to reverse.” Do not invent alternatives.
 
