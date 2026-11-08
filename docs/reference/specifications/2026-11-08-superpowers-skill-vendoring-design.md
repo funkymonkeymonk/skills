@@ -2,7 +2,7 @@
 
 ## Status
 
-Implementation is in progress. This document records the accepted design.
+Implementation is complete. This document records the accepted design and verified behavior.
 
 ## Problem
 
@@ -105,3 +105,13 @@ Rejected alternatives:
 - The Vercel Skills CLI can install a selected skill from the private repository.
 - The repository preserves the upstream license and attribution.
 - The existing `README.md` and `docs/how-to/` changes remain included.
+
+## Implementation results
+
+- All 19 Python tests passed.
+- Both existing structural Bash tests passed.
+- STE flavored lint returned `ste: clean.`
+- GitHub created `funkymonkeymonk/skills` as a private repository.
+- The Skills CLI installed only `diataxis-docs` from the private repository in a temporary project.
+- Manual workflow run [42513336792](https://github.com/funkymonkeymonk/skills/actions/runs/42513336792) completed successfully.
+- The upstream allowlist remains empty because the user has not selected skills. Fixture tests verified update pull request behavior. The workflow created no live upstream update pull requests.
