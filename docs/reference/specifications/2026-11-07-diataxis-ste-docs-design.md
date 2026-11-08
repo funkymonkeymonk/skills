@@ -2,7 +2,7 @@
 
 ## Status
 
-Implementation is in progress. This document records the accepted design.
+Implementation is complete. This document records the accepted design and final validation results.
 
 ## Problem
 
@@ -76,7 +76,12 @@ Keep each skill in its own directory under `skills/`. A user must be able to ins
 
 ## Implementation status
 
-The root policy, skill, README, and ADR are in place. Task 4 will run the final Vercel Skills CLI install check.
+Validation passed:
+
+- The structural test passed.
+- STE flavored lint returned `ste: clean.`
+- The Vercel Skills CLI installed only `diataxis-docs` in a temporary Pi project.
+- Git reports `plans/`, the local Issue 9 PDF, and `.pi-subagents/` as ignored.
 
 ## Acceptance criteria
 
