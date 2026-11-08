@@ -40,5 +40,6 @@ grep -Fq 'Ruling:' skills/reversible-decisions/SKILL.md
 grep -Fq 'Impact if wrong:' skills/reversible-decisions/SKILL.md
 grep -Fq 'Rejected alternatives:' skills/reversible-decisions/SKILL.md
 grep -Fq 'numbered options' skills/reversible-decisions/SKILL.md
+grep -Fq '3. A structural Bash test plus a small set of prompt tests.' tests/fixtures/meaningful-reversible-choice.md
 lines="$(wc -l < skills/reversible-decisions/SKILL.md)"
 (( lines < 500 ))
