@@ -2,7 +2,7 @@
 
 ## Status
 
-Design approved in chat. This document records the design for review before implementation.
+Implementation is in progress. This document records the accepted design.
 
 ## Problem
 
@@ -52,7 +52,7 @@ Use these locations in this repository:
 - Specifications: `docs/reference/specifications/`
 - ADRs: `docs/explanation/decisions/`
 
-Do not use a `docs/superpowers/` path. Follow an existing repository convention when it is more specific. Classify content by its purpose, not only by its file name. Split content only when that improves its use.
+Do not use workflow-specific directories for durable documents. Follow an existing repository convention when it is more specific. Classify content by its purpose, not only by its file name. Split content only when that improves its use.
 
 ### Plan lifecycle
 
@@ -73,6 +73,10 @@ Do not include the ASD-STE100 PDF or a generated dictionary index in a skill pac
 ### Distribution
 
 Keep each skill in its own directory under `skills/`. A user must be able to install one skill without installing the others. Document the Vercel Skills CLI command for individual installation to Pi's standard global target.
+
+## Implementation status
+
+The root policy, skill, README, and ADR are in place. Task 4 will run the final Vercel Skills CLI install check.
 
 ## Acceptance criteria
 
