@@ -35,7 +35,7 @@ grep -Fq 'jev_evaluate' skills/reversible-decisions/SKILL.md
 grep -Fq 'If `jev_evaluate` is unavailable' skills/reversible-decisions/SKILL.md
 grep -Fq 'A clear direct request counts as user input' skills/reversible-decisions/SKILL.md
 grep -Fq 'When you ask for missing facts about a hard or unclear choice, use up to three numbered options.' AGENTS.md
-grep -Fq 'If a hard or unclear choice still lacks critical facts, ask the user with up to three numbered options.' skills/reversible-decisions/SKILL.md
+grep -Fq 'When critical facts are not available for a hard or unclear choice, ask the user with up to three numbered options.' skills/reversible-decisions/SKILL.md
 grep -Fq 'Ruling:' skills/reversible-decisions/SKILL.md
 grep -Fq 'Impact if wrong:' skills/reversible-decisions/SKILL.md
 grep -Fq 'Rejected alternatives:' skills/reversible-decisions/SKILL.md
