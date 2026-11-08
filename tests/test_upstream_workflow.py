@@ -25,6 +25,8 @@ class UpstreamWorkflowTests(unittest.TestCase):
         self.assertRegex(workflow, r"(?m)^\s+pull-requests:\s*write$")
         self.assertNotRegex(workflow, r"(?m)^\s+(issues|actions|packages):\s*write$")
         self.assertIn("scripts/vendor_skills.py update", workflow)
+        self.assertIn("actions/checkout@v6", workflow)
+        self.assertIn("actions/setup-python@v7", workflow)
 
     def test_initial_manifest_has_an_empty_explicit_allowlist(self):
         self.assertTrue(MANIFEST.is_file(), "the upstream allowlist must exist")
