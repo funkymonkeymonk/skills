@@ -2,7 +2,7 @@
 
 ## Status
 
-Implementation is in progress. This document records the accepted design.
+Implementation is complete. This document records the accepted design and verified behavior.
 
 ## Problem
 
@@ -126,4 +126,10 @@ Rejected alternatives:
 - The devenv vendor task copied all 15 upstream skills and their licenses.
 - The Skills CLI installed the vendored `brainstorming` skill from the private repository in a temporary project.
 - Manual workflow run [42513336792](https://github.com/funkymonkeymonk/skills/actions/runs/42513336792) completed successfully.
-- The manifest pins all 15 current upstream Agent Skills. Fixture tests verified update pull request behavior. The workflow created no live update pull requests during the initial vendor sync.
+- The manifest pins all 15 current upstream Agent Skills to exact Git commits.
+- The devenv vendor task copied all 15 skills and their license files.
+- All 21 Python tests passed. Both existing structural Bash tests passed.
+- STE flavored lint returned `ste: clean.`
+- The Skills CLI found 17 skills in the private repository and installed `brainstorming` in a temporary project.
+- The manual workflow run [42513336792](https://github.com/funkymonkeymonk/skills/actions/runs/42513336792) succeeded while the manifest contained no upstream skills.
+- Fixture tests verified update pull request behavior. The vendor sync created no live upstream update pull requests.
