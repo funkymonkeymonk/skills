@@ -15,7 +15,9 @@ Create `funkymonkeymonk/skills` as a private GitHub repository. Keep an explicit
 
 Copy only selected skill directories into `skills/`. Preserve the matching upstream license in `licenses/upstream/`. Do not execute upstream files or modify upstream content during synchronization.
 
-Use `scripts/vendor_skills.py` to synchronize exact pins and open update pull requests. Run the check weekly and on manual request. Create one review-only pull request per changed skill. Do not merge pull requests automatically.
+Use `scripts/vendor_skills.py` to synchronize exact pins and open update pull requests. Expose local synchronization and update checks through devenv tasks. Keep GitHub Actions calling the Python script directly. Commit `devenv.lock` to pin environment inputs.
+
+Run the check weekly and on manual request. Create one review-only pull request per changed skill. Do not merge pull requests automatically.
 
 Use the Vercel Skills CLI to install selected skills from this repository. Keep the initial upstream allowlist empty until the owner selects skills.
 

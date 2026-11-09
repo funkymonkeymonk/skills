@@ -41,7 +41,17 @@ Create one pull request per changed skill. Include the old and new commit SHAs a
 
 Do not create another pull request for a skill while its update pull request remains open. Do not recreate a closed pull request for the same skill and revision. Create a new pull request when a later upstream revision changes that skill.
 
-### GitHub automation and installation
+### Devenv tasks, GitHub automation, and installation
+
+Define `skills:vendor` to synchronize exact pins. Define `upstreams:check` to check upstream changes and open review pull requests. Define `check:lint` for repository checks. Commit `devenv.lock` to pin environment inputs.
+
+Keep the Python script as the shared implementation. Keep the GitHub workflow calling that script directly. Do not add Nix setup to GitHub Actions.
+
+Ruling: Use devenv tasks for local commands and keep GitHub Actions calling Python — this avoids Nix setup in CI. Impact if wrong: local and scheduled checks use different entry points.
+
+Rejected alternatives:
+
+1. Run the devenv task in GitHub Actions — this adds Nix setup to the workflow.
 
 Run the update check every Monday at 09:17 UTC and through a manual workflow trigger. Give the workflow only `contents: write` and `pull-requests: write` permissions.
 
@@ -108,9 +118,10 @@ Rejected alternatives:
 
 ## Implementation results
 
-- All 19 Python tests passed.
+- All 21 Python tests passed.
 - Both existing structural Bash tests passed.
 - STE flavored lint returned `ste: clean.`
+- `devenv tasks run skills:vendor`, `devenv tasks run upstreams:check`, and `devenv tasks run check:lint` passed.
 - GitHub created `funkymonkeymonk/skills` as a private repository.
 - The Skills CLI installed only `diataxis-docs` from the private repository in a temporary project.
 - Manual workflow run [42513336792](https://github.com/funkymonkeymonk/skills/actions/runs/42513336792) completed successfully.

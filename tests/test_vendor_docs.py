@@ -10,7 +10,7 @@ class VendorSkillDocumentationTests(unittest.TestCase):
         readme = (ROOT / "README.md").read_text()
         self.assertIn("upstreams.json", readme)
         self.assertIn("docs/how-to/vendor-a-superpowers-skill.md", readme)
-        self.assertIn("scripts/vendor_skills.py update", readme)
+        self.assertIn("devenv tasks run upstreams:check", readme)
 
     def test_how_to_explains_pins_and_review_pull_requests(self):
         guide = ROOT / "docs" / "how-to" / "vendor-a-superpowers-skill.md"

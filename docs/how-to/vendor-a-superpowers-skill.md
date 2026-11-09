@@ -5,8 +5,10 @@ Use this guide to add one selected skill from `obra/superpowers` to this reposit
 ## Requirements
 
 - Read access to `obra/superpowers`.
-- Python 3 and Git.
-- GitHub CLI access to `funkymonkeymonk/skills` when you create update pull requests.
+- Devenv.
+- A GitHub CLI login with access to `funkymonkeymonk/skills` for update checks.
+
+Devenv supplies Python 3, Git, and the GitHub CLI in its task environment.
 
 ## Select and pin a skill
 
@@ -46,7 +48,7 @@ Use this guide to add one selected skill from `obra/superpowers` to this reposit
 5. Synchronize the pinned files.
 
    ```sh
-   python3 scripts/vendor_skills.py sync
+   devenv tasks run skills:vendor
    ```
 
 6. Review the diff. Confirm that it contains only the selected skill and its upstream license.
@@ -60,10 +62,7 @@ GitHub checks upstream skills every week and on manual request. Each changed ski
 To run the check locally, authenticate with `gh` and run:
 
 ```sh
-python3 scripts/vendor_skills.py update \
-  --repo . \
-  --base main \
-  --repo-slug funkymonkeymonk/skills
+devenv tasks run upstreams:check
 ```
 
 Review each pull request before you merge it. Close a pull request to reject its current revision. The workflow does not reopen a rejected revision. It can propose a later upstream revision.

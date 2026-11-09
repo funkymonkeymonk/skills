@@ -2,3 +2,5 @@
 /ASD-STE100_ISSUE9.pdf
 /.pi-subagents/
 __pycache__/
+/.devenv/
+/.direnv/
