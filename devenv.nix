@@ -26,8 +26,11 @@
       if command -v ste >/dev/null 2>&1; then
         ste lint --mode=flavored --format=agent --no-config \
           README.md \
+          skills/diataxis-docs/SKILL.md \
+          skills/ste-technical-writing/SKILL.md \
           docs/how-to/vendor-a-superpowers-skill.md \
           docs/explanation/decisions/0003-selective-superpowers-skill-vendoring.md \
+          docs/explanation/decisions/0005-documentation-skill-boundaries.md \
           docs/reference/specifications/2026-11-08-superpowers-skill-vendoring-design.md \
           docs/reference/specifications/2026-11-07-diataxis-ste-docs-design.md \
           docs/reference/specifications/2026-11-08-reversible-decisions-design.md

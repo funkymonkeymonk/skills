@@ -20,14 +20,21 @@ The root `AGENTS.md` applies documentation rules to work in this repository. It 
 
 ## Additional personal skills
 
-This repository includes four skills from `funkymonkeymonk/nix`. Its Nix manifest still deploys its own copies.
+This repository includes three skills from `funkymonkeymonk/nix`. Its Nix manifest still deploys its own copies.
 
 - `consumer-decision-guides` — research and write evidence-based buying guides.
 - `creating-user-manual` — create personal working-style documents.
 - `devenv` — configure and use devenv environments.
-- `ste-implementation-plans` — write plans when a user explicitly requests STE.
 
-Use `writing-plans` for general implementation plans. Use `ste-implementation-plans` for explicit STE plan requests.
+## Documentation and planning skills
+
+- `diataxis-docs` — select documentation structure by reader need.
+- `ste-technical-writing` — apply STE language guidance to technical documents.
+- `writing-plans` — create implementation plans with the Superpowers workflow and structure.
+
+For an implementation plan, use `writing-plans` for the process and `ste-technical-writing` for language. Use `diataxis-docs` when a document needs a Diataxis structure. The root `AGENTS.md` sets this repository's STE policy.
+
+The Nix repository still deploys its own `ste-implementation-plans` copy. This repository does not update that copy automatically.
 
 ## Selected Superpowers skills
 
