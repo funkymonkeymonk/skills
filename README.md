@@ -18,6 +18,17 @@ To add a skill, create a separate directory under `skills/`. Give the directory 
 
 The root `AGENTS.md` applies documentation rules to work in this repository. It does not change your global Pi instructions or other repositories.
 
+## Additional personal skills
+
+This repository includes four skills from `funkymonkeymonk/nix`. Its Nix manifest still deploys its own copies.
+
+- `consumer-decision-guides` — research and write evidence-based buying guides.
+- `creating-user-manual` — create personal working-style documents.
+- `devenv` — configure and use devenv environments.
+- `ste-implementation-plans` — write plans when a user explicitly requests STE.
+
+Use `writing-plans` for general implementation plans. Use `ste-implementation-plans` for explicit STE plan requests.
+
 ## Selected Superpowers skills
 
 The `upstreams.json` file pins all 15 current skills from `obra/superpowers` to exact Git commits. The update workflow does not add new upstream skills automatically. To stop updates for a skill, remove its manifest entry. To remove its vendored files, also delete its directory and license file.
