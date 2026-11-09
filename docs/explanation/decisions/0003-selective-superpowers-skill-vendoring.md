@@ -5,7 +5,7 @@
 
 ## Context
 
-This repository stores personal Agent Skills. The owner wants selected skills from `obra/superpowers`, not the full upstream set.
+This repository stores personal Agent Skills. The owner asked to vendor all current skills from `obra/superpowers`, not its plugins or other repository files.
 
 Direct installation does not keep a pinned source copy or create reviewable upstream update pull requests. A private repository must keep its selection explicit.
 
@@ -19,13 +19,13 @@ Use `scripts/vendor_skills.py` to synchronize exact pins and open update pull re
 
 Run the check weekly and on manual request. Create one review-only pull request per changed skill. Do not merge pull requests automatically.
 
-Use the Vercel Skills CLI to install selected skills from this repository. Keep the initial upstream allowlist empty until the owner selects skills.
+Use the Vercel Skills CLI to install skills from this repository. List all 15 current upstream skills in the manifest. Do not add new upstream skills automatically.
 
 ## Consequences
 
 The owner can review and accept or reject each skill update. The manifest shows which upstream revision each vendored skill uses. The private repository requires authenticated access for installation and pull request updates.
 
-The owner must add a manifest entry to include a skill. The workflow does not add new upstream skills automatically.
+The owner must add a manifest entry to include a new upstream skill. The owner must remove both the manifest entry and vendored files to remove an imported skill.
 
 ## Rejected alternatives
 

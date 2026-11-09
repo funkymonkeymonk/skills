@@ -43,7 +43,7 @@ Devenv supplies Python 3, Git, and the GitHub CLI in its task environment.
    }
    ```
 
-   Keep every existing skill entry. Add one object for each selected skill.
+   Keep every wanted skill entry. Add one object for each new selected skill.
 
 5. Synchronize the pinned files.
 
@@ -54,6 +54,12 @@ Devenv supplies Python 3, Git, and the GitHub CLI in its task environment.
 6. Review the diff. Confirm that it contains only the selected skill and its upstream license.
 
 7. Commit `upstreams.json`, `skills/<name>/`, and `licenses/upstream/<name>-LICENSE`.
+
+## Remove a skill
+
+1. Remove its entry from `upstreams.json` to stop update checks.
+2. Delete `skills/<name>/` and `licenses/upstream/<name>-LICENSE` to remove the vendored copy.
+3. Commit the manifest and file changes.
 
 ## Check for updates
 

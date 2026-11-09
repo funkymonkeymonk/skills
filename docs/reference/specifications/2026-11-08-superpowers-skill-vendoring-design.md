@@ -2,7 +2,7 @@
 
 ## Status
 
-Implementation is complete. This document records the accepted design and verified behavior.
+Implementation is in progress. This document records the accepted design.
 
 ## Problem
 
@@ -27,7 +27,7 @@ Store the upstream selection and pins in `upstreams.json`. Each entry identifies
 
 Store vendored skills under `skills/<name>/`. Store each matching license at `licenses/upstream/<name>-LICENSE`. The destination paths derive from the skill name. The manifest is an allowlist. The sync task must not add skills that are absent from the manifest.
 
-Start with an empty upstream selection because the user has not named any skills. This prevents an unrequested skill from entering the repository. Add a skill only when the user adds its manifest entry.
+The manifest lists all 15 Agent Skills under `obra/superpowers/skills/` at the time of import. Pin each skill to its latest path-specific commit. Do not copy upstream plugins, scripts, documentation, or other repository files. Do not add future upstream skills automatically. Add each new skill through an explicit manifest entry.
 
 Keep the upstream MIT license and attribution with the vendored content. Do not modify upstream skill text during synchronization.
 
@@ -92,11 +92,11 @@ Rejected alternatives:
 
 1. Combine all updates in one pull request — this makes independent acceptance require manual edits.
 
-Ruling: Start with an empty upstream list — the user has not named skills, so this blocks unrequested imports. Impact if wrong: no upstream skills are available until the user adds entries.
+Ruling: Vendor all 15 current Agent Skills from `obra/superpowers` — the user directly requested all upstream skills in this skills repository. Impact if wrong: the repository includes skills the user later does not want. The owner must then remove each skill from the manifest and filesystem.
 
 Rejected alternatives:
 
-1. Select common Superpowers skills by default — this would invent the user's desired selection.
+1. Copy the entire Superpowers repository — its plugins, scripts, and documentation do not fit this repository's Agent Skills install model.
 
 Ruling: Run the update check weekly and on manual request — this follows the user's instruction. Impact if wrong: scheduled checks can create unwanted review pull requests, which the user can close.
 
@@ -106,7 +106,7 @@ Rejected alternatives:
 
 ## Acceptance criteria
 
-- `upstreams.json` pins each selected skill to an exact commit SHA and records its license path.
+- `upstreams.json` pins all 15 current upstream skills to exact commit SHAs and records their license paths.
 - Synchronization copies only allowlisted skill paths and does not modify upstream content.
 - The weekly and manual update workflow creates separate, review-only pull requests for changed skills.
 - The update process does not create duplicate pull requests for a skill and revision, and it does not reopen a rejected revision.
@@ -123,6 +123,7 @@ Rejected alternatives:
 - STE flavored lint returned `ste: clean.`
 - `devenv tasks run skills:vendor`, `devenv tasks run upstreams:check`, and `devenv tasks run check:lint` passed.
 - GitHub created `funkymonkeymonk/skills` as a private repository.
-- The Skills CLI installed only `diataxis-docs` from the private repository in a temporary project.
+- The devenv vendor task copied all 15 upstream skills and their licenses.
+- The Skills CLI installed the vendored `brainstorming` skill from the private repository in a temporary project.
 - Manual workflow run [42513336792](https://github.com/funkymonkeymonk/skills/actions/runs/42513336792) completed successfully.
-- The upstream allowlist remains empty because the user has not selected skills. Fixture tests verified update pull request behavior. The workflow created no live upstream update pull requests.
+- The manifest pins all 15 current upstream Agent Skills. Fixture tests verified update pull request behavior. The workflow created no live update pull requests during the initial vendor sync.

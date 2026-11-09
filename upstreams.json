@@ -1,4 +1,110 @@
 {
   "version": 1,
-  "skills": []
+  "skills": [
+    {
+      "name": "brainstorming",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/brainstorming",
+      "license_path": "LICENSE",
+      "ref": "22f0b463e7a5e579904dd6211a520321035526f7"
+    },
+    {
+      "name": "diagnosing-superpowers",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/diagnosing-superpowers",
+      "license_path": "LICENSE",
+      "ref": "b739a8af570e10a95898f2bdf6cec97467fa6c12"
+    },
+    {
+      "name": "dispatching-parallel-agents",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/dispatching-parallel-agents",
+      "license_path": "LICENSE",
+      "ref": "6dbbbda3baeff8407f3dddb0cc9e8a9495a273bc"
+    },
+    {
+      "name": "executing-plans",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/executing-plans",
+      "license_path": "LICENSE",
+      "ref": "22f0b463e7a5e579904dd6211a520321035526f7"
+    },
+    {
+      "name": "finishing-a-development-branch",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/finishing-a-development-branch",
+      "license_path": "LICENSE",
+      "ref": "b36e0829c6d0140e93cfef2ca599b1b07d4a7797"
+    },
+    {
+      "name": "receiving-code-review",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/receiving-code-review",
+      "license_path": "LICENSE",
+      "ref": "3fb75974186ea7fada621d8ab77b3b02169baf57"
+    },
+    {
+      "name": "requesting-code-review",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/requesting-code-review",
+      "license_path": "LICENSE",
+      "ref": "bb92a77741419a4ab5f06e711a283343f1ada0c3"
+    },
+    {
+      "name": "subagent-driven-development",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/subagent-driven-development",
+      "license_path": "LICENSE",
+      "ref": "22f0b463e7a5e579904dd6211a520321035526f7"
+    },
+    {
+      "name": "systematic-debugging",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/systematic-debugging",
+      "license_path": "LICENSE",
+      "ref": "22f0b463e7a5e579904dd6211a520321035526f7"
+    },
+    {
+      "name": "test-driven-development",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/test-driven-development",
+      "license_path": "LICENSE",
+      "ref": "5bf4e78011075bcfc0dc295f0724994cd123ee71"
+    },
+    {
+      "name": "using-git-worktrees",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/using-git-worktrees",
+      "license_path": "LICENSE",
+      "ref": "bc868020bbcec32bbaf9d6b51fa0538dba0b487f"
+    },
+    {
+      "name": "using-superpowers",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/using-superpowers",
+      "license_path": "LICENSE",
+      "ref": "5bf4e78011075bcfc0dc295f0724994cd123ee71"
+    },
+    {
+      "name": "verification-before-completion",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/verification-before-completion",
+      "license_path": "LICENSE",
+      "ref": "3be5aad3dd2400ef23b15680969f4bcd3b6d7b8b"
+    },
+    {
+      "name": "writing-plans",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/writing-plans",
+      "license_path": "LICENSE",
+      "ref": "8ca22dba9a94f28898bbce59f2537ff4d87c747d"
+    },
+    {
+      "name": "writing-skills",
+      "repository": "https://github.com/obra/superpowers.git",
+      "path": "skills/writing-skills",
+      "license_path": "LICENSE",
+      "ref": "2ce8aa15d05bd57213e6f746f953aafb7ded7a8b"
+    }
+  ]
 }

@@ -20,6 +20,6 @@ The root `AGENTS.md` applies documentation rules to work in this repository. It 
 
 ## Selected Superpowers skills
 
-The `upstreams.json` file lists the Superpowers skills that this repository vendors. Each entry pins one skill to an exact Git commit. The list starts empty, so the repository does not import skills that you have not selected.
+The `upstreams.json` file pins all 15 current skills from `obra/superpowers` to exact Git commits. The update workflow does not add new upstream skills automatically. To stop updates for a skill, remove its manifest entry. To remove its vendored files, also delete its directory and license file.
 
 See [Vendor a Superpowers skill](docs/how-to/vendor-a-superpowers-skill.md) to add a skill, synchronize its pinned files, and install it with the Skills CLI. Run `devenv tasks run skills:vendor` to synchronize pins. Run `devenv tasks run upstreams:check` to check upstream changes locally. GitHub also checks selected skills weekly and on manual request. It opens one review pull request per changed skill. It does not merge pull requests.

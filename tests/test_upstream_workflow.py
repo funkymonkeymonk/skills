@@ -28,10 +28,34 @@ class UpstreamWorkflowTests(unittest.TestCase):
         self.assertIn("actions/checkout@v6", workflow)
         self.assertIn("actions/setup-python@v7", workflow)
 
-    def test_initial_manifest_has_an_empty_explicit_allowlist(self):
+    def test_manifest_pins_every_current_superpowers_skill(self):
+        expected = {
+            "brainstorming",
+            "diagnosing-superpowers",
+            "dispatching-parallel-agents",
+            "executing-plans",
+            "finishing-a-development-branch",
+            "receiving-code-review",
+            "requesting-code-review",
+            "subagent-driven-development",
+            "systematic-debugging",
+            "test-driven-development",
+            "using-git-worktrees",
+            "using-superpowers",
+            "verification-before-completion",
+            "writing-plans",
+            "writing-skills",
+        }
         self.assertTrue(MANIFEST.is_file(), "the upstream allowlist must exist")
         manifest = json.loads(MANIFEST.read_text())
-        self.assertEqual(manifest, {"version": 1, "skills": []})
+        self.assertEqual(manifest["version"], 1)
+        skills = manifest["skills"]
+        self.assertEqual({skill["name"] for skill in skills}, expected)
+        for skill in skills:
+            self.assertEqual(skill["repository"], "https://github.com/obra/superpowers.git")
+            self.assertEqual(skill["path"], f"skills/{skill['name']}")
+            self.assertEqual(skill["license_path"], "LICENSE")
+            self.assertRegex(skill["ref"], r"^[0-9a-f]{40}$")
 
 
 if __name__ == "__main__":
